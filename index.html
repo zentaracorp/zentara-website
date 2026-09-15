@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zentara Corp — People. Compliance. Growth.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zentara: {
+                            black: '#040810',
+                            navyDark: '#08101D',
+                            navy: '#0E1A2E',
+                            navyLight: '#162844',
+                            gold: '#C5A059',
+                            goldLight: '#E2B866',
+                            goldGlow: 'rgba(197, 160, 89, 0.25)',
+                            card: '#0C1729',
+                            cardHover: '#12223C',
+                            border: '#1A2E4C',
+                            borderGold: '#C5A05940'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #040810; 
+            color: #E2E8F0; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Glassmorphism styling */
+        .glass-panel {
+            background: rgba(12, 23, 41, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(26, 46, 76, 0.8);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(14, 26, 46, 0.8) 0%, rgba(8, 16, 29, 0.9) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 20%, #C5A059 70%, #E2B866 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #C5A059 0%, #D4AF37 50%, #9A7B3E 100%);
+        }
+
+        /* Ambient Glow Effect */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zentara-gold selection:text-zentara-black overflow-x-hidden">
+
+    <!-- Ambient Glow Backgrounds -->
+    <div class="glow-orb w-96 h-96 bg-zentara-gold/10 top-0 left-1/4"></div>
+    <div class="glow-orb w-[30rem] h-[30rem] bg-blue-900/10 top-1/3 right-0"></div>
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-zentara-border/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-zentara-navyLight to-zentara-black border border-zentara-gold/50 flex items-center justify-center shadow-lg shadow-zentara-gold/10">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 25 C40 15, 80 15, 80 32 C80 40, 50 50, 20 75 L80 75" stroke="#C5A059" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 25 L80 25 C50 50, 20 60, 20 68 C20 85, 60 85, 80 75" stroke="#162844" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1">
+                        <span class="text-xl font-extrabold tracking-widest text-white">ZENTARA</span>
+                        <span class="text-xl font-light tracking-widest text-zentara-gold">CORP</span>
+                    </div>
+                    <span class="text-[8px] tracking-[0.22em] text-slate-400 font-bold uppercase">People. Compliance. Growth.</span>
+                </div>
+            </a>
+            
+            <!-- Menu -->
+            <nav class="hidden lg:flex space-x-8 text-xs font-semibold tracking-wider uppercase text-slate-300">
+                <a href="#home" class="hover:text-zentara-gold transition-colors">Home</a>
+                <a href="#solutions" class="hover:text-zentara-gold transition-colors">Solutions</a>
+                <a href="#market-entry" class="hover:text-zentara-gold transition-colors">Market Entry</a>
+                <a href="#offshore" class="hover:text-zentara-gold transition-colors">Extended Office</a>
+                <a href="#industries" class="hover:text-zentara-gold transition-colors">Sectors</a>
+                <a href="#about" class="hover:text-zentara-gold transition-colors">About Us</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#contact" class="gold-gradient-bg text-zentara-black px-5 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase hover:shadow-lg hover:shadow-zentara-gold/20 hover:scale-[1.02] transition-all duration-200">
+                    Get In Touch <i data-lucide="arrow-up-right" class="inline w-4 h-4 ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Button -->
+            <button id="menu-toggle" class="lg:hidden text-slate-300 hover:text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-zentara-navy border-b border-zentara-border px-6 py-6 space-y-4 text-xs font-semibold uppercase">
+            <a href="#home" class="block text-slate-300 hover:text-zentara-gold">Home</a>
+            <a href="#solutions" class="block text-slate-300 hover:text-zentara-gold">Solutions</a>
+            <a href="#market-entry" class="block text-slate-300 hover:text-zentara-gold">Market Entry</a>
+            <a href="#offshore" class="block text-slate-300 hover:text-zentara-gold">Extended Office</a>
+            <a href="#industries" class="block text-slate-300 hover:text-zentara-gold">Sectors</a>
+            <a href="#about" class="block text-slate-300 hover:text-zentara-gold">About Us</a>
+            <a href="#contact" class="block w-full text-center gold-gradient-bg text-zentara-black py-2.5 rounded-lg font-bold">Get In Touch</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+        
+        <!-- Background Image Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Corporate Architecture Background" 
+                 class="w-full h-full object-cover object-center opacity-15 filter brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-b from-zentara-black/80 via-zentara-black/90 to-zentara-black"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-zentara-navyLight/80 text-zentara-gold border border-zentara-gold/30 mb-6 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-zentara-gold animate-pulse"></span> Corporate Advisory & Workforce Solutions
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+                        Build. Operate. Scale. <br/>
+                        <span class="gold-gradient-text">In Sri Lanka.</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 mb-6 leading-relaxed font-light max-w-2xl">
+                        Zentara Corp serves global entities and ambitious businesses with comprehensive market entry, Employer of Record (EOR), HR compliance, and extended offshore setup.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#solutions" class="gold-gradient-bg text-zentara-black font-bold px-7 py-3.5 rounded-lg text-xs tracking-wider uppercase flex items-center justify-center hover:shadow-xl hover:shadow-zentara-gold/20 transition-all">
+                            Explore Corporate Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                        <a href="#contact" class="glass-panel text-white font-semibold px-7 py-3.5 rounded-lg text-xs tracking-wider uppercase flex items-center justify-center hover:border-zentara-gold/50 transition-all">
+                            Consult An Advisor
+                        </a>
+                    </div>
+
+                    <!-- Highlight Metrics -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-zentara-border/60">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                            <div class="text-[11px] text-slate-400 mt-1 uppercase font-medium">Statutory Compliance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-zentara-gold">Full Lifecycle</div>
+                            <div class="text-[11px] text-slate-400 mt-1 uppercase font-medium">Setup To Operations</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">60%+</div>
+                            <div class="text-[11px] text-slate-400 mt-1 uppercase font-medium">Cost Optimization</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-zentara-gold to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                        <div class="relative bg-zentara-card border border-zentara-border p-3 rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
+                                 alt="Executive Strategy Session" 
+                                 class="w-full h-64 sm:h-72 object-cover rounded-xl filter brightness-90">
+                            
+                            <div class="p-5">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold text-zentara-gold uppercase tracking-wider">Enterprise Framework</span>
+                                    <span class="px-2.5 py-1 bg-zentara-gold/10 text-zentara-gold text-[10px] rounded-full font-bold">End-To-End</span>
+                                </div>
+                                <h3 class="text-white font-bold text-base mb-2">Dedicated Offshore & Managed Hubs</h3>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Establish your technical, operational, or legal backend in Sri Lanka with complete EPF/ETF statutory safety, legal entity setup, and payroll governance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CORE SERVICES GRID -->
+    <section id="solutions" class="py-24 bg-zentara-navyDark relative border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">Comprehensive Offerings</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 tracking-tight">Capabilities Designed For Scale</h2>
+                <p class="text-slate-400 text-sm mt-4">Bringing agility, risk mitigation, and operational excellence to corporate delivery.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Business Incorporation" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zentara-card via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-zentara-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-extrabold text-zentara-gold border border-zentara-gold/30">01 SETUP</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zentara-gold transition-colors">Business Setup & Market Entry</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Full incorporation of PVT Ltd entities, BOI approvals, banking setups, and local statutory filings.</p>
+                            <ul class="space-y-2 text-slate-300 text-xs">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Company Structuring</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> BOI & Regulatory Clearances</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Corporate Banking Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-zentara-gold hover:underline">Learn More <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Workforce Solutions" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zentara-card via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-zentara-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-extrabold text-zentara-gold border border-zentara-gold/30">02 TALENT</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zentara-gold transition-colors">Workforce & EOR Solutions</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Employer of Record (EOR), executive headhunting, and flexible staff augmentation for fast scaling.</p>
+                            <ul class="space-y-2 text-slate-300 text-xs">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Employer of Record (EOR)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Executive Headhunting</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Specialized Tech Sourcing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-zentara-gold hover:underline">Learn More <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Operations & BPO" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zentara-card via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-zentara-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-extrabold text-zentara-gold border border-zentara-gold/30">03 OPERATIONS</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zentara-gold transition-colors">Payroll & Statutory Governance</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Turnkey payroll processing, statutory EPF/ETF administration, and labor law compliance.</p>
+                            <ul class="space-y-2 text-slate-300 text-xs">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Complete Payroll Processing</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> EPF / ETF Remittances</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Labor Law Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-zentara-gold hover:underline">Learn More <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Corporate Governance" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zentara-card via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-zentara-black/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-extrabold text-zentara-gold border border-zentara-gold/30">04 STRATEGY</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-zentara-gold transition-colors">Advisory & Restructuring</h3>
+                            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Strategic consultation for organizational transformation, HR audits, and expansion planning.</p>
+                            <ul class="space-y-2 text-slate-300 text-xs">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Comprehensive HR Audits</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Process Optimization</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zentara-gold"></i> Restructuring Advisory</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-zentara-gold hover:underline">Learn More <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EXTENDED OFFICE / OFFSHORE SECTION -->
+    <section id="offshore" class="py-24 bg-zentara-navy relative overflow-hidden border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Offshore Extended Team" 
+                             class="rounded-2xl border border-zentara-border shadow-2xl filter brightness-90">
+                        
+                        <div class="absolute -bottom-6 -right-6 glass-panel p-5 rounded-xl border border-zentara-gold/40 hidden sm:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-zentara-gold/20 flex items-center justify-center text-zentara-gold">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-sm">Build-Operate-Transfer</div>
+                                    <div class="text-slate-400 text-xs">BOT Framework Ready</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 order-1 lg:order-2">
+                    <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">Offshore Hub Establishment</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6 tracking-tight">Your Dedicated Extended Office</h2>
+                    
+                    <p class="text-slate-300 text-sm mb-6 leading-relaxed font-light">
+                        Scale your technical, operational, or finance capabilities in Sri Lanka without establishing an immediate legal entity. Zentara Corp manages recruitment, physical workspaces, IT setup, and HR administration under our established legal umbrella.
+                    </p>
+
+                    <div class="space-y-4 text-xs text-slate-300 mb-8">
+                        <div class="p-4 glass-card rounded-lg flex items-start gap-3">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-zentara-gold shrink-0 mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block text-sm mb-0.5">0% Risk Entity Ownership</span>
+                                <span class="text-slate-400">Hire local specialists legally through Zentara's Employer of Record structure with full compliance.</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 glass-card rounded-lg flex items-start gap-3">
+                            <i data-lucide="cpu" class="w-5 h-5 text-zentara-gold shrink-0 mt-0.5"></i>
+                            <div>
+                                <span class="font-bold text-white block text-sm mb-0.5">Seamless Brand Integration</span>
+                                <span class="text-slate-400">Your offshore team adopts your company culture, reporting systems, tools, and workflows.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="gold-gradient-bg text-zentara-black px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider inline-flex items-center">
+                        Schedule An Offshore Setup Call <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MARKET ENTRY ROADMAP -->
+    <section id="market-entry" class="py-24 bg-zentara-navyDark relative border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">Seamless Onboarding</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 tracking-tight">Market Entry Roadmap</h2>
+                <p class="text-slate-400 text-sm mt-3">From regulatory evaluation to full operational scale in 5 clear milestones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                
+                <div class="glass-card p-6 rounded-xl relative hover:border-zentara-gold transition-all">
+                    <span class="text-2xl font-black text-zentara-gold/40 block mb-2">01</span>
+                    <h4 class="text-white font-bold text-sm mb-2">Assessment</h4>
+                    <p class="text-[11px] text-slate-400 leading-snug">Regulatory assessment, tax planning, and corporate model definition.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl relative hover:border-zentara-gold transition-all">
+                    <span class="text-2xl font-black text-zentara-gold/40 block mb-2">02</span>
+                    <h4 class="text-white font-bold text-sm mb-2">Establishment</h4>
+                    <p class="text-[11px] text-slate-400 leading-snug">Company setup, BOI filing, banking, & statutory registration.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl relative hover:border-zentara-gold transition-all">
+                    <span class="text-2xl font-black text-zentara-gold/40 block mb-2">03</span>
+                    <h4 class="text-white font-bold text-sm mb-2">Acquisition</h4>
+                    <p class="text-[11px] text-slate-400 leading-snug">Key executive sourcing, team recruitment, & onboarding.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl relative hover:border-zentara-gold transition-all">
+                    <span class="text-2xl font-black text-zentara-gold/40 block mb-2">04</span>
+                    <h4 class="text-white font-bold text-sm mb-2">Management</h4>
+                    <p class="text-[11px] text-slate-400 leading-snug">Payroll administration, statutory EPF/ETF compliance, & HR ops.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl relative hover:border-zentara-gold transition-all">
+                    <span class="text-2xl font-black text-zentara-gold/40 block mb-2">05</span>
+                    <h4 class="text-white font-bold text-sm mb-2">Expansion</h4>
+                    <p class="text-[11px] text-slate-400 leading-snug">Operational optimization, scaling teams, & regional expansion.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SECTORS -->
+    <section id="industries" class="py-24 bg-zentara-navy relative border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">Sector Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Industries We Empower</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-5 glass-card rounded-xl text-center">
+                    <i data-lucide="cpu" class="w-6 h-6 text-zentara-gold mx-auto mb-2"></i>
+                    <span class="text-xs font-bold text-white">Information Technology</span>
+                </div>
+                <div class="p-5 glass-card rounded-xl text-center">
+                    <i data-lucide="landmark" class="w-6 h-6 text-zentara-gold mx-auto mb-2"></i>
+                    <span class="text-xs font-bold text-white">Fintech & Banking</span>
+                </div>
+                <div class="p-5 glass-card rounded-xl text-center">
+                    <i data-lucide="factory" class="w-6 h-6 text-zentara-gold mx-auto mb-2"></i>
+                    <span class="text-xs font-bold text-white">Apparel & Export</span>
+                </div>
+                <div class="p-5 glass-card rounded-xl text-center">
+                    <i data-lucide="truck" class="w-6 h-6 text-zentara-gold mx-auto mb-2"></i>
+                    <span class="text-xs font-bold text-white">Logistics & Supply Chain</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ABOUT ZENTARA CORP -->
+    <section id="about" class="py-24 bg-zentara-navyDark border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6">
+                    <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">About The Firm</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6">Bridging Vision & Local Execution</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Zentara Corp Lanka (Private) Limited provides high-grade advisory, corporate management, and workforce infrastructure for organizations operating in or expanding to Sri Lanka.
+                    </p>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        By integrating deep knowledge of local statutory regulations, tax structures, labor law, and recruitment channels, we ensure our clients experience zero compliance friction while growing rapidly.
+                    </p>
+                    <div class="p-4 glass-card rounded-lg inline-block border border-zentara-gold/30">
+                        <span class="text-xs text-slate-400 block font-medium">Core Operating Motto</span>
+                        <span class="text-sm font-extrabold text-zentara-gold uppercase tracking-wider">PEOPLE. COMPLIANCE. GROWTH.</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden border border-zentara-border">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Corporate Boardroom Strategy" 
+                             class="w-full h-80 object-cover filter brightness-90">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONTACT / CONSULTATION SECTION -->
+    <section id="contact" class="py-24 bg-zentara-navy relative border-t border-zentara-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-zentara-gold/20 relative overflow-hidden">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6">
+                        <span class="text-zentara-gold text-xs font-extrabold tracking-widest uppercase">Start The Conversation</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-6 tracking-tight">Ready To Expand or Optimize Your Operations?</h2>
+                        <p class="text-slate-300 text-xs mb-8 leading-relaxed font-light">
+                            Contact our corporate advisory team to discuss company setup, Employer of Record services, or offshore team establishment.
+                        </p>
+
+                        <div class="space-y-4 text-xs">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-8 h-8 rounded-full bg-zentara-gold/10 flex items-center justify-center text-zentara-gold"><i data-lucide="phone" class="w-4 h-4"></i></div>
+                                <span>+94 77 033 6723</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-8 h-8 rounded-full bg-zentara-gold/10 flex items-center justify-center text-zentara-gold"><i data-lucide="mail" class="w-4 h-4"></i></div>
+                                <span>sales@zentaracorp.com</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-8 h-8 rounded-full bg-zentara-gold/10 flex items-center justify-center text-zentara-gold"><i data-lucide="map-pin" class="w-4 h-4"></i></div>
+                                <span>Colombo, Sri Lanka</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <form class="space-y-4 bg-zentara-black/60 p-6 sm:p-8 rounded-2xl border border-zentara-border" onsubmit="event.preventDefault(); alert('Thank you. A Zentara Corp corporate advisor will connect with you shorty.');">
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Full Name</label>
+                                <input type="text" placeholder="John Doe" required class="w-full px-4 py-2.5 bg-zentara-card border border-zentara-border rounded-lg text-xs text-white focus:outline-none focus:border-zentara-gold">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Corporate Email</label>
+                                <input type="email" placeholder="john@company.com" required class="w-full px-4 py-2.5 bg-zentara-card border border-zentara-border rounded-lg text-xs text-white focus:outline-none focus:border-zentara-gold">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Primary Requirement</label>
+                                <select class="w-full px-4 py-2.5 bg-zentara-card border border-zentara-border rounded-lg text-xs text-slate-300 focus:outline-none focus:border-zentara-gold">
+                                    <option>Market Entry & Entity Incorporation</option>
+                                    <option>Employer of Record (EOR) / PEO</option>
+                                    <option>Offshore Extended Office (BOT)</option>
+                                    <option>Executive Search & Recruitment</option>
+                                    <option>Payroll & Statutory Compliance</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Scope Details</label>
+                                <textarea rows="3" placeholder="Tell us about your objectives..." class="w-full px-4 py-2.5 bg-zentara-card border border-zentara-border rounded-lg text-xs text-white focus:outline-none focus:border-zentara-gold"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 gold-gradient-bg text-zentara-black font-extrabold rounded-lg text-xs tracking-wider uppercase hover:shadow-xl hover:shadow-zentara-gold/20 transition-all">
+                                Request Consultation
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-zentara-black border-t border-zentara-border/60 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg font-extrabold tracking-widest text-white">ZENTARA</span>
+                    <span class="text-lg font-light tracking-widest text-zentara-gold">CORP</span>
+                </div>
+                <p class="text-[11px] text-slate-400">&copy; 2026 Zentara Corp Lanka (Private) Limited. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-[11px]">
+                    <a href="#" class="hover:text-zentara-gold transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-zentara-gold transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
